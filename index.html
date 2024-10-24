@@ -48,7 +48,7 @@
                 />
                 <button type="submit">Sprawdź</button>
             </form>
-            <div class="message" id="message"></div>
+            <div class="message" id="message" style="max-width: 500px"></div>
         </div>
 
         <script>
@@ -63,9 +63,8 @@
                     userPassword.trim().toLowerCase() ===
                     correctPassword.toLowerCase()
                 ) {
-                    message.style.color = "green";
                     message.innerHTML =
-                        "Brawo! Hasło jest poprawne. <br> Aaa, już wszystko wiadome... To potwór Ajax ukrył Twój prezent! Musisz stawić mu czoła, aby go odzyskać. Udaj się do miejsca, gdzie potwór lubi przebywać, i poszukaj pod jego brzuszkiem. Tam znajdziesz to, czego szukałaś!";
+                        "<br><br> <img src='ajax.jpg' width='500'><br><br>Aaa, już wszystko wiadome... To potwór Ajax ukrył Twój prezent! <u><b style='color:#c5127e;'>Musisz stawić mu czoła, aby go odzyskać.</b></u> Udaj się do miejsca, gdzie potwór lubi przebywać, i poszukaj pod jego brzuszkiem. Tam znajdziesz to, czego szukałaś!";
                     // Możesz tutaj dodać przekierowanie lub wyświetlenie nowego zadania.
                 } else {
                     message.style.color = "red";
