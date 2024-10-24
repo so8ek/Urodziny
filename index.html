@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sprawdź Hasło</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f2f2f2;
+                margin: 0;
+            }
+            .container {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+            input[type="text"] {
+                padding: 10px;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            .message {
+                margin-top: 20px;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Wpisz hasło, aby kontynuować</h2>
+            <form onsubmit="checkPassword(event)">
+                <input
+                    type="text"
+                    id="passwordInput"
+                    placeholder="Wpisz hasło"
+                />
+                <button type="submit">Sprawdź</button>
+            </form>
+            <div class="message" id="message"></div>
+        </div>
+
+        <script>
+            function checkPassword(event) {
+                event.preventDefault(); // Zapobiega domyślnemu wysyłaniu formularza
+                const correctPassword = "Potwór Ajax"; // Poprawne hasło
+                const userPassword =
+                    document.getElementById("passwordInput").value;
+                const message = document.getElementById("message");
+
+                if (
+                    userPassword.trim().toLowerCase() ===
+                    correctPassword.toLowerCase()
+                ) {
+                    message.style.color = "green";
+                    message.innerHTML =
+                        "Brawo! Hasło jest poprawne. <br> Twoje kolejne zadanie to: ...";
+                    // Możesz tutaj dodać przekierowanie lub wyświetlenie nowego zadania.
+                } else {
+                    message.style.color = "red";
+                    message.innerHTML = "Niepoprawne hasło, spróbuj ponownie.";
+                }
+            }
+        </script>
+    </body>
+</html>
