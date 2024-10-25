@@ -6,6 +6,7 @@
         <title>Sprawdź Hasło</title>
         <style>
             body {
+                padding: 0 15px;
                 font-family: Arial, sans-serif;
                 display: flex;
                 justify-content: center;
@@ -14,6 +15,17 @@
                 background-color: #f2f2f2;
                 margin: 0;
             }
+
+            *,
+            *::after,
+            *::before {
+                box-sizing: border-box;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
             .container {
                 background-color: #ffffff;
                 padding: 20px;
@@ -64,7 +76,7 @@
                     correctPassword.toLowerCase()
                 ) {
                     message.innerHTML =
-                        "<br><br> <img src='ajax.jpg' width='500'><br><br>Aaa, już wszystko wiadome... To potwór Ajax ukrył Twój prezent! <u><b style='color:#c5127e;'>Musisz stawić mu czoła, aby go odzyskać.</b></u> Udaj się do miejsca, gdzie potwór lubi przebywać, i poszukaj pod jego brzuszkiem. Tam znajdziesz to, czego szukałaś!";
+                        "<br><br> <img src='ajax.jpg'><br><br>Aaa, już wszystko wiadome... To potwór Ajax ukrył Twój prezent! <u><b style='color:#c5127e;'>Musisz stawić mu czoła, aby go odzyskać.</b></u> Udaj się do miejsca, gdzie potwór lubi przebywać, i poszukaj pod jego brzuszkiem. Tam znajdziesz to, czego szukałaś!";
                     // Możesz tutaj dodać przekierowanie lub wyświetlenie nowego zadania.
                 } else {
                     message.style.color = "red";
